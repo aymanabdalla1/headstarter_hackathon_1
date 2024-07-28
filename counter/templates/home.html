@@ -30,8 +30,7 @@
                   </form>
 
                 {% if api %}
-
-                {% if api == "Oops! Something went wrong" %}
+                {% if api.calories == 0%}
                 <div class="alert alert-warning">Oops! Something went wrong. Please try again later!</div>
                 {%else%}
                 <h1>{{ api.ingredients.0.text | capfirst }} has a total of <strong>{{ api.calories|div:api.totalWeight|mul:100|floatformat:0 }} Calories</strong></h1>
@@ -137,6 +136,7 @@
                     datasets: [{
                         label: 'Nutritional values of {{api.ingredients.0.text | capfirst}}',
                         data: [
+                        
                         {% with conversion_factor=100|div:api.totalWeight%}
                         {{api.totalNutrients.CHOCDF.quantity|mul:conversion_factor|floatformat:0}},
                         {{api.totalNutrients.CHOLE.quantity|mul:conversion_factor|floatformat:0}},

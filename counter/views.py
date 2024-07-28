@@ -15,6 +15,6 @@ def home(request):
             api = json.loads(api_request.content)
         except Exception as e:
             api = "oops! something went wrong"
-        return render(request, 'home.html', {'api': api})
+        return render(request, '500.html', {'api': api})
     else:
-        return render(request, 'home.html', {'query': 'Enter a food item to get its nutrition details'})
+        return render(request, 'error.html')
