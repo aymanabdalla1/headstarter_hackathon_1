@@ -136,16 +136,15 @@
                     datasets: [{
                         label: 'Nutritional values of {{api.ingredients.0.text | capfirst}}',
                         data: [
-                        {% with conversion_factor=100|div:api.totalWeight%}
-                        {{api.totalNutrients.CHOCDF.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.CHOLE.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.FASAT.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.FAT.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.FIBTG.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.K.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.PROCNT.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.NA.quantity|mul:conversion_factor|floatformat:0}},
-                        {{api.totalNutrients.SUGAR.quantity |mul:conversion_factor | floatformat:0}}
+                        {{api.totalNutrients.CHOCDF.quantity}},
+                        {{api.totalNutrients.CHOLE.quantity}},
+                        {{api.totalNutrients.FASAT.quantity}},
+                        {{api.totalNutrients.FAT.quantity}},
+                        {{api.totalNutrients.FIBTG.quantity}},
+                        {{api.totalNutrients.K.quantity}},
+                        {{api.totalNutrients.PROCNT.quantity}},
+                        {{api.totalNutrients.NA.quantity}},
+                        {{api.totalNutrients.SUGAR.quantity}} 
                         ],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -176,7 +175,6 @@
                     }
                 }
             });
-            {% endwith %}
             </script>
   </body>
 </html>
